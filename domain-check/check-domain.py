@@ -1,5 +1,19 @@
 import whois
 
+def read_list_from_file():
+
+    
+
+
+def format_names(domains):
+
+    if len(domains) == 0:
+        print("You provided no domains")
+    else:
+        for name in domains:
+
+
+
 def is_registered(domain_name):
 
     try:
