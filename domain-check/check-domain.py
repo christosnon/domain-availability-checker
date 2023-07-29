@@ -1,8 +1,5 @@
 import whois
-
-def read_list_from_file():
-
-    
+import tkinter as tkinter
 
 
 def format_names(domains):
