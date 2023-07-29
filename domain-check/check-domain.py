@@ -1,6 +1,5 @@
 import whois
-import tkinter as tkinter
-
+import tk as tk
 
 def format_names(domains):
 
