@@ -46,6 +46,7 @@ def check_list_of_domains(domains_list):
 if __name__ == "__main__":
     input_text = ""
     while True:
+        # Get text from clipboard
         new_text = pyperclip.paste()
         if new_text == input_text:
             break
