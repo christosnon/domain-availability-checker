@@ -1,11 +1,12 @@
 import whois
 import pyperclip
 
-
+# Map a list of strings to a new one
 def process_input(input_list):
     processed_list = [s.lower() for s in input_list]
     return processed_list
 
+# Get as input a list of names and format them as tlds
 def format_names(domains, tld):
     list_to_return = []
     updated_domain_name = ''
@@ -19,8 +20,7 @@ def format_names(domains, tld):
     
     return list_to_return
     
-
-
+# Check if a given domain name is available
 def is_registered(domain_name):
 
     try:
@@ -30,7 +30,7 @@ def is_registered(domain_name):
     else:
         return bool(is_registered.domain_name)
 
-
+# Get a list of domain names and check if every one is or not available
 def check_list_of_domains(domains_list):
 
     if len(domains_list) == 0:
@@ -57,8 +57,9 @@ if __name__ == "__main__":
     # Process the list
     processed_list = process_input(input_list)
 
-    # Output the new list
+    # Get the list with names and turn them into domains
     tld_list = format_names(processed_list, "com")
 
+    #Check all domains if available or not
     check_list_of_domains(tld_list)
 
