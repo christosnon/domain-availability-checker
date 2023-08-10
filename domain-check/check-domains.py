@@ -1,5 +1,8 @@
 import whois
 import pyperclip
+import re
+
+pattern = r'^([a-zA-Z0-9]+(-[a-zA-Z0-9]+)*\.)+[a-zA-Z]{2,}$'
 
 # Map a list of strings to a new one
 def process_input(input_list):
@@ -15,8 +18,11 @@ def format_names(domains, tld):
         print("You provided no domains")
     else:
         for name in domains:
-            updated_domain_name = (name + "." + tld).replace(" ", "").lower()
-            list_to_return.append(updated_domain_name)
+            if re.match(pattern, name):
+                list_to_return.append(name)
+            else:
+                updated_domain_name = (name + "." + tld).replace(" ", "").lower()
+                list_to_return.append(updated_domain_name)
     
     return list_to_return
     
